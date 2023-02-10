@@ -23,7 +23,7 @@ const about = () => {
             <article className="about__card">
               <FaAward className="about__icon" />
               <h5>Experience</h5>
-              <small>6+ months Team lead</small> <br/>
+              <small>6+ months Team lead</small> <br />
               <small>5+ year Sales/Support</small>
             </article>
 
@@ -41,21 +41,28 @@ const about = () => {
           </div>
 
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-            illo magni iste nemo iure exercitationem fugit ratione, veritatis
-            facere quo cumque provident alias similique ex deleniti sapiente
-            incidunt ea odit commodi! Quos expedita odio explicabo enim aut
-            perferendis repellendus blanditiis sed repudiandae, sint illum
-            veritatis veniam rerum iste reprehenderit recusandae eveniet, ad
-            dolore. Nobis necessitatibus quae repellat nam fugit, nisi labore
-            eum ut delectus laudantium voluptates beatae recusandae nemo rem
-            dolorum. Ipsum dolores quis culpa, fugiat cum fugit possimus,
-            beatae, nobis expedita nostrum nulla dignissimos reiciendis officia.
-            Natus veniam et doloribus ipsum, amet quas deleniti eius quae
-            numquam? Maiores, porro.
+            Highly motivated and results-driven full-stack developer with
+            experience in HTML, CSS, JavaScript, React, Angular, Node.js, Java,
+            Spring Web, MongoDB, MariaDB and Microsoft Excel. Proficient in
+            creating dynamic and responsive web applications with a focus on
+            user experience. Skilled in testing and quality assurance, both
+            manual and automated. Proven track record of delivering high-quality
+            work on time and within budget.
           </p>
 
-          <a href="#contact" className="btn btn-primary">Let's Talk</a>
+          <p>
+            Experienced Sales Specialist with 5 years of experience in
+            developing and implementing successful sales strategies.
+            Demonstrated ability to achieve and exceed sales targets, build and
+            maintain strong client relationships, and effectively manage a team.
+            Recently elevated to the role of Team Lead, where I successfully led
+            two departments, providing guidance and direction to achieve company
+            goals and improve overall performance.
+          </p>
+
+          <a href="#contact" className="btn btn-primary">
+            Let's Talk
+          </a>
         </div>
       </div>
     </section>
