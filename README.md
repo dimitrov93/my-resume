@@ -7,13 +7,12 @@
 
 ## Hosted with Github Pages
 - npm install gh-pages --save-dev
--- package.json  
+- package.json  
   + "homepage": "https://dimitrov93.github.io/my-resume",
-
-"scripts": {
-+   "predeploy": "npm run build",
-+   "deploy": "gh-pages -d build",
+  + "scripts": {
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
 }
 
---- git remote add origin https://github.com/dimitrov93/my-resume.git
----- npm run deploy
+- git remote add origin https://github.com/dimitrov93/my-resume.git
+- npm run deploy
