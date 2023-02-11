@@ -11,33 +11,33 @@ const data = [
   {
     id: 1,
     image: IMG1,
-    title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, rem!',
-    github: 'https://github.com',
-    demo: 'https://github.com',
+    title: 'The old good Pac-man game made only with Javascript',
+    github: 'https://github.com/dimitrov93/Pac-Man/tree/main/v2',
+    demo: 'https://dimitrov93.github.io/Pac-Man/v2/',
   },
 
   {
     id: 2,
     image: IMG2,
-    title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, rem!',
-    github: 'https://github.com',
-    demo: 'https://github.com',
+    title: 'Recreating the Japanese shooting game made in 1978.',
+    github: 'https://github.com/dimitrov93/SpaceInvaders',
+    demo: 'https://fanciful-caramel-74944d.netlify.app/',
   },
 
   {
     id: 3,
     image: IMG3,
-    title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, rem!',
-    github: 'https://github.com',
-    demo: 'https://github.com',
+    title: 'E-commerce web application made with React',
+    github: 'https://github.com/dimitrov93/xoxoStore',
+    demo: 'https://xoxostore-7ef9a.web.app/',
   },
 
   {
     id: 4,
     image: IMG4,
-    title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, rem!',
-    github: 'https://github.com',
-    demo: 'https://github.com',
+    title: 'OfficeBoard application made with Angular',
+    github: 'https://github.com/dimitrov93/OfficeBoard',
+    demo: 'https://office-board.web.app/',
   },
 
   {
