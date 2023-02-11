@@ -8,8 +8,8 @@
 ## Hosted with Github Pages
 - npm install gh-pages --save-dev
 - package.json  
-  + "homepage": "https://dimitrov93.github.io/my-resume",
-  + "scripts": {
+  - "homepage": "https://dimitrov93.github.io/my-resume",
+  - "scripts": {
    "predeploy": "npm run build",
    "deploy": "gh-pages -d build",
 }
