@@ -2,15 +2,22 @@ import './contact.css'
 import { AiOutlineMail, AiFillLinkedin } from "react-icons/ai";
 import { RiMessengerLine } from "react-icons/ri";
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 
 
 const Contact = () => {
   const form = useRef();
+  const [message, setMessage] = useState('')
+  const [isMessageVisible, setIsMessageVisible] = useState(false)
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsMessageVisible(true)
+
+    const formData = new FormData(e.target)
+
+    const name = formData.get('name')
 
     emailjs.sendForm('service_k4ilrce', 'template_9qoxwnh', form.current, '4TajOj_csladDDh56')
       .then((result) => {
@@ -20,6 +27,11 @@ const Contact = () => {
       });
 
     e.target.reset()
+    setMessage(`Thank you, ${name}! Message has been sent!`)
+
+    setTimeout(() => {
+      setIsMessageVisible(false)
+    }, 5000);
   };
 
 
@@ -58,6 +70,7 @@ const Contact = () => {
             <input type="text" name='name' placeholder='Your Full name' required />
             <input type="text" name='email' placeholder='Your Email' required />
             <textarea name="message" rows="7" placeholder='Your Message' required></textarea>
+            {isMessageVisible && <p className='message'>{message}</p>}
             <button type="submit" className='btn btn-primary'>Send Message</button>
         </form>
       </div>

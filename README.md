@@ -20,3 +20,8 @@
 ## Tools used
  - React-icons 
     - npm install react-icons --save
+ - React ToolTop
+    - npm install react-tooltip
+    - import 'react-tooltip/dist/react-tooltip.css' -> index.js
+    - import { Tooltip } from 'react-tooltip' -> component
+ - EmailJS
