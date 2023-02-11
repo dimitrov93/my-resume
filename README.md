@@ -17,6 +17,6 @@
 - git remote add origin https://github.com/dimitrov93/my-resume.git
 - npm run deploy
 
-### Tools used
+## Tools used
  - React-icons 
  + npm install react-icons --save
