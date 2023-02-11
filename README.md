@@ -19,4 +19,4 @@
 
 ## Tools used
  - React-icons 
- + npm install react-icons --save
+    - npm install react-icons --save
