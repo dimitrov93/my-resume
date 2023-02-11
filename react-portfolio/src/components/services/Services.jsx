@@ -8,125 +8,133 @@ const Services = () => {
     <h2>Services</h2>
 
     <div className="container services__container">
+      
+      {/* Sales */}
       <article className="service">
         <div className="service__head">
-          <h3>Lorem ipsum dolor sit amet.</h3>
+          <h3>Sales</h3>
         </div>
 
         <div className="service__list">
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p className="tooltip-on-hover">Product knowledge</p>
+            <div className="tooltip" >This is the tooltip</div>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Customer engagement</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Sales strategies</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Presentation skills</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Negotiation skills</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Customer service</p>
           </li>
 
           {/* END OF FIRST */}
         </div>
       </article>
 
-      <article className="service">
+      {/* Full-stack developer */}
+      <article className="service"> 
         <div className="service__head">
-          <h3>Lorem ipsum dolor sit amet.</h3>
+          <h3>Front-end Development</h3>
         </div>
 
         <div className="service__list">
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Technical proficiency</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Responsiveness</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Web accessibility</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Testing and debugging</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Cross-functional collaboration</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Database management</p>
           </li>
 
           {/* END OF FIRST */}
         </div>
       </article>
 
+      {/* Team Lead */}
       <article className="service">
         <div className="service__head">
-          <h3>Lorem ipsum dolor sit amet.</h3>
+          <h3>Team Management</h3>
         </div>
 
         <div className="service__list">
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Leadership</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Communication</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Motivation</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Problem-solving</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Technical expertise</p>
           </li>
 
           <li>
             <BsCheckCircle className="service__list-icon" />
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Performance management</p>
           </li>
 
-          {/* END OF FIRST */}
+
+          {/* Team Lead */}
         </div>
       </article>
+
+
     </div>
   </section>;
 };

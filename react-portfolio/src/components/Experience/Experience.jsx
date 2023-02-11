@@ -79,6 +79,22 @@ const Experience = () => {
                 <small className="text-light">Experienced</small>
                 </div>
             </article>
+
+            <article className="experience__details">
+                <BsPatchCheck className="experience__details-icon" />
+                <div>
+                <h4>MariaDB</h4>
+                <small className="text-light">Experienced</small>
+                </div>
+            </article>
+
+            <article className="experience__details">
+                <BsPatchCheck className="experience__details-icon" />
+                <div>
+                <h4>ExpressJS</h4>
+                <small className="text-light">Experienced</small>
+                </div>
+            </article>
           </div>
         </div>
 
