@@ -40,21 +40,7 @@ const data = [
     demo: 'https://office-board.web.app/',
   },
 
-  {
-    id: 5,
-    image: IMG5,
-    title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, rem!',
-    github: 'https://github.com',
-    demo: 'https://github.com',
-  },
 
-  {
-    id: 6,
-    image: IMG6,
-    title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, rem!',
-    github: 'https://github.com',
-    demo: 'https://github.com',
-  },
 ]
 
 const Portfolio = () => {

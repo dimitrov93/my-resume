@@ -8,20 +8,37 @@ import Portfolio from './components/portfolio/Portfolio'
 import Testimonials from './components/testimonials/Testimonials'
 import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
+import Login from './components/Login/login'
+import Logout from './components/Logout/Logout'
+import { Routes, Route } from "react-router-dom";
+import { AuthProvider } from './context/AuthContext'
+
+
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Nav />
-      <About />
-      <Experience />
-      <Services />
-      <Portfolio />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </>
+    <AuthProvider>
+      <Routes>
+        <Route basename={'/'} path='/'
+          element={
+            <>
+            <Header />
+            <Nav />
+            <About />
+            <Experience />
+            <Services />
+            <Portfolio />
+            <Testimonials />
+            <Contact />
+            <Footer />
+            </>
+          }/>
+
+      <Route path='/login' element={<Login />} />
+      <Route path="/logout" element={<Logout />} />
+          
+      </Routes>
+    </AuthProvider>
   )
 }
 
