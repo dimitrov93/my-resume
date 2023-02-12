@@ -4,18 +4,23 @@ import './header.css'
 import ME from '../../assets/me.png'
 import HeaderSocials from './HeaderSocials'
 import * as headerService from '../../services/headerService'
-
+import {AiFillEdit} from 'react-icons/ai'
 
 const Header = () => {
-  const [name, setName] = useState('Tsvetomir')
-  const [data, setData] = useState([])
+  const [name, setName] = useState('')
+  const [description, setDescription] = useState('')
+  const [title, setTitle] = useState('')
+  
 
   useEffect(() => {
     try {
       headerService.getHeader()
         .then((result) => {
-          console.log(result);
-          setData(result)
+          result.map(x => {
+            setName(x.name)
+            setTitle(x.title)
+            setDescription(x.description)
+          })
         })
     } catch (error) {
       console.log(error);
@@ -26,7 +31,7 @@ const Header = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const { name } = Object.fromEntries(new FormData(e.target));
+    const { name, title, description } = Object.fromEntries(new FormData(e.target));
 
     setName(name)
 
@@ -35,18 +40,22 @@ const Header = () => {
   return (
     <header>
       <div className="container header__container">
-        <h5>Hello I'm</h5>
-        <h1>      {data.map(x => x.name)}</h1>
+      
+
+        <h5>{title} <button type='button'><AiFillEdit /></button></h5> 
+        <h1>{name}</h1>
+        <h5 className="text-light">{description}</h5>
 
         <div className='changeName'>
           <form onSubmit={onSubmit}>
+          <input type="text" name='title' placeholder='New title' />
           <input type="text" name='name' placeholder='New name' />
+          <input type="text" name='description' placeholder='New description' />
           <button type='submit' className='btn btn-primary'>Change name</button>
           </form>
         </div>
 
 
-        <h5 className="text-light">Front-end Developer</h5>
         <CTA />
         <HeaderSocials />
 

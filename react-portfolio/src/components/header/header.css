@@ -69,6 +69,8 @@ header {
     background: transparent;
     align-items: center;
     justify-content: center;
+    position: relative;
+
 }
 
 .changeName button {

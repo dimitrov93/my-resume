@@ -8,19 +8,30 @@ import Portfolio from './components/portfolio/Portfolio'
 import Testimonials from './components/testimonials/Testimonials'
 import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
+import Login from './components/Login/login'
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Nav />
-      <About />
-      <Experience />
-      <Services />
-      <Portfolio />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route path='/'
+          element={
+            <>
+            <Header />
+            <Nav />
+            <About />
+            <Experience />
+            <Services />
+            <Portfolio />
+            <Testimonials />
+            <Contact />
+            <Footer />
+            </>
+          }/>
+
+      <Route path='/login' element={<Login />} />
+      </Routes>
     </>
   )
 }
