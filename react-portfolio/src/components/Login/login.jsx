@@ -26,7 +26,7 @@ const Login = () => {
             setError(authData.message)
             return
           }
-          navigate('/my-resume')
+          navigate('/')
         })
     } catch (error) {
       console.log(error);
@@ -37,10 +37,11 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='loginForm'>
       <div>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email" >Email:</label>
         <input
+          className="loginInput"
           type="email"
           id="email"
           name="email"
@@ -49,6 +50,7 @@ const Login = () => {
       <div>
         <label htmlFor="password">Password:</label>
         <input
+          className="loginInput"
           type="password"
           id="password"
           name="password"

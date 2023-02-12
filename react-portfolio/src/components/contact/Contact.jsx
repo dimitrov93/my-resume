@@ -62,7 +62,7 @@ const Contact = () => {
               <AiFillLinkedin className="contact__option-icon" />
               <h4>LinkedIn</h4>
               <h5>dimitrovtsvetomir</h5>
-              <a href="https://www.linkedin.com/in/tsvetomir-dimitrov-921678238/" target='_blank'>Send a message</a>
+              <a href="mailto:ts.dimitrov93@gmail.com" target='_blank'>Send a message</a>
             </article>
         </div>
 

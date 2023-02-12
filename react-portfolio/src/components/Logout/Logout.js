@@ -13,11 +13,11 @@ const Logout = () => {
       .logout(user.accessToken)
       .then(() => {
         userLogout();
-        navigate("/my-resume");
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);
-        navigate("/my-resume");
+        navigate("/error");
       });
   });
 

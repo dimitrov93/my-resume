@@ -5,3 +5,4 @@ const baseUrl = 'http://localhost:5000/api/header';
 
 export const getHeader = () => request.get(baseUrl);
 export const createHeader = (data) => request.post(baseUrl, data);
+export const updateHeader = (id, data) => request.put(`${baseUrl}/${id}`, data);
