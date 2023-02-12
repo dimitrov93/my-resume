@@ -10,6 +10,10 @@ const cors = require('./middlewares/corseMiddleware');
 
 const headerRoute = require('./routes/header');
 
+app.use((req,res) => {
+    res.send('Resume server is running!')
+})
+
 app.use((req, res, next) => {
     console.log(`METHOD: ${req.method} >> PATH: ${req.path}`);
     next();
