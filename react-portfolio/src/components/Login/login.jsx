@@ -12,10 +12,9 @@ const Login = () => {
 
 
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform API call to verify login credentials
-    // ...
     const { email, password } = Object.fromEntries(new FormData(e.target));
 
     try {
@@ -31,9 +30,6 @@ const Login = () => {
     } catch (error) {
       console.log(error);
     }
-
-    // Clear form
-
   };
 
   return (

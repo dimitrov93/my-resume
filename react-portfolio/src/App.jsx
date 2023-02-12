@@ -10,7 +10,7 @@ import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
 import Login from './components/Login/login'
 import Logout from './components/Logout/Logout'
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext'
 
 
@@ -19,7 +19,7 @@ const App = () => {
   return (
     <AuthProvider>
       <Routes>
-        <Route basename={'/'} path='/'
+        <Route path='/'
           element={
             <>
             <Header />
