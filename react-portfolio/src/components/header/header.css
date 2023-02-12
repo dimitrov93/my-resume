@@ -64,6 +64,17 @@ header {
     font-size: 0.9rem;
 }
 
+.changeName {
+    display: flex;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+}
+
+.changeName button {
+    align-self: center;
+}
+
 
 /* ========== MEDIA QUERIES (MEDIUM DEVICES)  ========== */
 
