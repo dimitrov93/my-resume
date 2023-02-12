@@ -5,12 +5,16 @@ import ME from '../../assets/me.png'
 import HeaderSocials from './HeaderSocials'
 import * as headerService from '../../services/headerService'
 import {AiFillEdit} from 'react-icons/ai'
+import { useAuthContext } from '../../context/AuthContext';
 
 const Header = () => {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [title, setTitle] = useState('')
   
+  const {user} = useAuthContext();
+
+  console.log(user.email);
 
   useEffect(() => {
     try {
@@ -41,19 +45,19 @@ const Header = () => {
     <header>
       <div className="container header__container">
       
-
-        <h5>{title} <button type='button'><AiFillEdit /></button></h5> 
+      {user.email ? <button type='button'><AiFillEdit /></button> : '' }
+        <h5>{title}</h5> 
         <h1>{name}</h1>
         <h5 className="text-light">{description}</h5>
 
-        <div className='changeName'>
+        {/* <div className='changeName'>
           <form onSubmit={onSubmit}>
           <input type="text" name='title' placeholder='New title' />
           <input type="text" name='name' placeholder='New name' />
           <input type="text" name='description' placeholder='New description' />
           <button type='submit' className='btn btn-primary'>Change name</button>
           </form>
-        </div>
+        </div> */}
 
 
         <CTA />

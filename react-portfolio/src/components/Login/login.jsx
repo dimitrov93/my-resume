@@ -1,21 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import './login.css'
+import * as authService from '../../services/authService'
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const { userLogin } = useContext(AuthContext);
+  const [error, setError] = useState();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     // Perform API call to verify login credentials
     // ...
-    const { email, password } = Object.fromEntries(new FormData(event.target));
+    const { email, password } = Object.fromEntries(new FormData(e.target));
 
-    console.log(email)
+    try {
+      authService.login(email,password)
+        .then((authData) => {
+          userLogin(authData);
+          if (authData.message) {
+            setError(authData.message)
+            return
+          }
+          navigate('/my-resume')
+        })
+    } catch (error) {
+      console.log(error);
+    }
+
     // Clear form
-    setEmail("");
-    setPassword("");
+
   };
 
   return (
@@ -25,9 +43,7 @@ const Login = () => {
         <input
           type="email"
           id="email"
-          value={email}
           name="email"
-          onChange={(event) => setEmail(event.target.value)}
         />
       </div>
       <div>
@@ -35,12 +51,12 @@ const Login = () => {
         <input
           type="password"
           id="password"
-          value={password}
           name="password"
-          onChange={(event) => setPassword(event.target.value)}
         />
       </div>
+      {error && <p>{error}</p>}
       <button type="submit">Login</button>
+
     </form>
   );
 };
