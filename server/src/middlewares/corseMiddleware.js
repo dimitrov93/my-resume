@@ -1,5 +1,5 @@
 module.exports = () => (req, res, next) => {
-    const allowed = ['http://localhost:3000', "https://myresume-node-deployment.onrender.com"];
+    const allowed = ['https://dimitrov93.github.io/my-resume/','http://localhost:3000', "https://myresume-node-deployment.onrender.com"];
     const origin = req.get("origin");
   
     if (allowed.includes(origin)) {                         //
