@@ -5,10 +5,10 @@ const app = express();
 // const cors = require("cors");
 const cookieParser = require('cookie-parser');
 const {auth} = require('./middlewares/authMiddleware');
-
 const cors = require('./middlewares/corseMiddleware');
 
 const headerRoute = require('./routes/header');
+const authRoute = require('./routes/auth');
 
 
 
@@ -22,9 +22,9 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(auth)
 
+app.use("/api/auth", authRoute)
 app.use('/api/header', headerRoute)
 
-// app.use("/api/auth", authRoute)
 // app.use("/api/users", userRoute)
 // app.use("/api/tasks", taskRoute);
 // app.use("/api/messages", messageRoute);

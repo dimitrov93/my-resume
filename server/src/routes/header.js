@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const Header = require('../models/Header');
 const headerService = require('../services/headerService');
 
 router.get('/', async (req,res) => {
@@ -23,5 +22,16 @@ router.post("/create", async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+//Update
+router.put("/:id", async (req, res) => {
+  try {
+    console.log(req.params.id)
+    const updateName = await headerService.update(req.params.id, req.body)
+    res.status(200).json(updateName);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;
