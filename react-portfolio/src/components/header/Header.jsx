@@ -24,22 +24,12 @@ const Header = () => {
   useEffect(() => {
     try {
       headerService.getHeader().then((result) => {
-<<<<<<< Updated upstream
-        result.map((x) => {
-          setValues({
-            id: x._id,
-            name: x.name,
-            description: x.description,
-            title: x.title,
-          });
-=======
         console.log(result);
         setValues({
           id: result[0]._id,
           name: result[0].name,
           description: result[0].description,
           title: result[0].title,
->>>>>>> Stashed changes
         });
       });
     } catch (error) {
