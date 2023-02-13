@@ -10,7 +10,12 @@ import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
 import Login from './components/Login/login'
 import Logout from './components/Logout/Logout'
+<<<<<<< Updated upstream
 import { Routes, Route } from "react-router-dom";
+=======
+import AddPortfolio from './components/portfolio/Add/AddPortfolio'
+import { Routes, Route, HashRouter } from "react-router-dom";
+>>>>>>> Stashed changes
 import { AuthProvider } from './context/AuthContext'
 
 
@@ -36,6 +41,7 @@ const App = () => {
 
       <Route path='/login' element={<Login />} />
       <Route path="/logout" element={<Logout />} />
+      <Route path="/portfolio/add" element={<AddPortfolio />} />
           
       </Routes>
     </AuthProvider>

@@ -8,8 +8,6 @@ import { AiFillEdit } from "react-icons/ai";
 import { useAuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-
-
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
@@ -17,7 +15,7 @@ const Header = () => {
   const { user } = useAuthContext();
 
   const [values, setValues] = useState({
-    id:'',
+    id: "",
     name: "",
     description: "",
     title: "",
@@ -26,6 +24,7 @@ const Header = () => {
   useEffect(() => {
     try {
       headerService.getHeader().then((result) => {
+<<<<<<< Updated upstream
         result.map((x) => {
           setValues({
             id: x._id,
@@ -33,6 +32,14 @@ const Header = () => {
             description: x.description,
             title: x.title,
           });
+=======
+        console.log(result);
+        setValues({
+          id: result[0]._id,
+          name: result[0].name,
+          description: result[0].description,
+          title: result[0].title,
+>>>>>>> Stashed changes
         });
       });
     } catch (error) {
@@ -43,13 +50,11 @@ const Header = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
-    
-    headerService.updateHeader(values.id, data)
-      .then(result => {
-        setIsVisible(false)
-        navigate('/')
-      })
-    
+
+    headerService.updateHeader(values.id, data).then((result) => {
+      setIsVisible(false);
+      navigate("/");
+    });
   };
 
   const handleClick = () => {
@@ -87,25 +92,24 @@ const Header = () => {
                     name="title"
                     value={values.title}
                     onChange={handleChange}
-                    placeholder='Set new title'
+                    placeholder="Set new title"
                   />
                   <input
                     type="text"
                     name="name"
                     value={values.name}
                     onChange={handleChange}
-                    placeholder='Set new name'
+                    placeholder="Set new name"
                   />
                   <input
                     type="text"
                     name="description"
                     value={values.description}
                     onChange={handleChange}
-                    placeholder='Set new description'
-
+                    placeholder="Set new description"
                   />
                   <button type="submit" className="btn btn-primary">
-                    Change name
+                    Change
                   </button>
                 </form>
               </div>
