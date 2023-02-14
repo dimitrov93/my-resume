@@ -1,6 +1,18 @@
 const router = require('express').Router();
 const portfolioService = require('../services/portfolioService');
 
+// GET ONE
+router.get('/:id', async (req,res) => {
+    try {
+        const portfolio = await portfolioService.findOne(req.params.id)
+        res.status(200).json(portfolio);
+      } catch (err) {
+        res.status(500).json(err);
+      }
+
+});
+
+//GET ALL
 router.get('/', async (req,res) => {
     try {
         const portfolios = await portfolioService.find()
@@ -11,7 +23,7 @@ router.get('/', async (req,res) => {
 
 });
 
-
+//CREATE
 router.post("/create", async (req, res) => {
     const data = {...req.body};
     try {
@@ -33,15 +45,14 @@ router.delete("/:id", async (req, res) => {
     }
   });
 
-// //Update
-// router.put("/:id", async (req, res) => {
-//   try {
-//     console.log(req.params.id)
-//     const updateName = await headerService.update(req.params.id, req.body)
-//     res.status(200).json(updateName);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// })
+//Update
+router.put("/:id", async (req, res) => {
+  try {
+    const updatedPortfolio = await portfolioService.update(req.params.id, req.body)
+    res.status(200).json(updatedPortfolio);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;
