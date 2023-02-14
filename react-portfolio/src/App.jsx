@@ -13,6 +13,7 @@ import Logout from './components/Logout/Logout'
 import AddPortfolio from './components/portfolio/Add/AddPortfolio'
 import { Routes, Route, HashRouter } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext'
+import EditPortfolio from "./components/portfolio/Edit/EditPortfolio";
 
 
 
@@ -38,6 +39,7 @@ const App = () => {
       <Route path='/login' element={<Login />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="/portfolio/add" element={<AddPortfolio />} />
+      <Route path="/portfolio/edit/:id" element={<EditPortfolio />} />
           
       </Routes>
     </AuthProvider>

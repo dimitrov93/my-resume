@@ -34,7 +34,7 @@ const PortfolioItem = ({ item }) => {
           Live Demo
         </a>
         {user.email ? (
-          <Link to={`edit/${item._id}`}>
+          <Link to={`portfolio/edit/${item._id}`}>
             <a className="btn" target="_blank">
               Edit
             </a>
