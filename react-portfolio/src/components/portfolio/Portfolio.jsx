@@ -4,14 +4,14 @@ import IMG1 from "../../assets/portfolio1.jpg";
 import IMG2 from "../../assets/portfolio2.jpg";
 import IMG3 from "../../assets/portfolio3.jpg";
 import IMG4 from "../../assets/portfolio4.jpg";
-import IMG5 from "../../assets/portfolio5.png";
-import IMG6 from "../../assets/portfolio6.jpg";
+
 
 import * as portfolioService from "../../services/portfolioService";
 
 import { AiOutlineFileAdd } from "react-icons/ai";
 import { useAuthContext } from "../../context/AuthContext";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import {useNavigate, Link } from "react-router-dom";
+import PortfolioItem from "./Item/PortfolioItem";
 
 const data = [
   {
@@ -49,20 +49,7 @@ const data = [
 
 const Portfolio = () => {
   const [portFolio, setPortFolio] = useState([])
-
-  useEffect(() => {
-    portfolioService.getAll()
-      .then(result => {
-        console.log(result);
-        setPortFolio(result)
-      })
-  
-  }, [])
-  
-
   const [isVisible, setIsVisible] = useState(false);
-  const navigate = useNavigate();
-
   const { user } = useAuthContext();
 
   const [values, setValues] = useState({
@@ -72,22 +59,14 @@ const Portfolio = () => {
     title: "",
   });
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-  };
-
-  const handleClick = () => {
-    setIsVisible(!isVisible);
-  };
-
-  const handleChange = (event) => {
-    setValues({
-      ...values,
-      [event.target.name]: event.target.value,
-    });
-  };
-
+  useEffect(() => {
+    portfolioService.getAll()
+      .then(result => {
+        setPortFolio(result)
+      })
+  
+  }, [])
+  
   return (
     <section id="portfolio">
       <h5>My recent work</h5>
@@ -107,43 +86,9 @@ const Portfolio = () => {
       </div>
 
       <div className="container portfolio__container">
-        {portFolio.map(({ _id, image, title, github, demo }) => {
-          return (
-            <article key={_id} className="portfolio__item">
-              <div className="portfolio__item-image">
-                <img src={image} alt={title} />
-              </div>
-              <h3>{title}</h3>
-              <div className="portfolio__item-cta">
-                <a href={github} className="btn" target="_blank">
-                  Github
-                </a>
-                <a href={demo} className="btn" target="_blank">
-                  Live Demo
-                </a>
-                {user.email ? (
-                  <Link to={`edit/${_id}`}>
-                    <a className="btn" target="_blank">
-                      Edit
-                    </a>{" "}
-                  </Link>
-                ) : (
-                  ""
-                )}
-                {user.email ? (
-                  <Link to={`delete/${_id}`}>
-                    {" "}
-                    <a className="btn" target="_blank">
-                      Delete
-                    </a>{" "}
-                  </Link>
-                ) : (
-                  ""
-                )}
-              </div>
-            </article>
-          );
-        })}
+          
+        {portFolio.map(x => <PortfolioItem key={x._id} item={x} />)}  
+
       </div>
     </section>
   );

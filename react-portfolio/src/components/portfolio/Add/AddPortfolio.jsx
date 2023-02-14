@@ -1,40 +1,66 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../Add/addPortfolio.css";
+import * as portfolioService from '../../../services/portfolioService'
+import { useNavigate } from "react-router-dom";
 
 const AddPortfolio = () => {
+  const navigate = useNavigate()
+  const [values, setValues] = useState({
+    title: "",
+    image: "",
+    github: "",
+    demo: "",
+  });
+
+  function onSubmit(e) {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target));
+    try {
+      portfolioService.createPortfolio(data)
+    .then(result => {
+      console.log(result);
+      navigate("/");
+    })
+    } catch (error) {
+      console.log(error);
+    }
+  
+   
+  }
+  
   return (
-    <div class="add-page">
-      <h1 class="add-page-title">Add Item</h1>
-      <form action="#" class="add-page-form">
-        <div class="form-group">
-          <label for="title" class="form-label">
+    <div className="add-page">
+      <h1 className="add-page-title">Add Item</h1>
+      <form className="add-page-form" onSubmit={onSubmit}>
+        <div className="form-group">
+          <label htmlFor="title" className="form-label">
             Title:
           </label>
-          <input type="text" id="title" name="title" class="form-input" />
+          <input type="text" id="title" name="title" className="form-input" />
         </div>
 
-        <div class="form-group">
-            <label for="image" class="form-label">
+        <div className="form-group">
+            <label htmlFor="image" className="form-label">
                 Image:
             </label>
-            <input type="text" id="image" name="image" class="form-input" />
+            <input type="text" id="image" name="image" className="form-input" />
         </div>
 
-        <div class="form-group">
-            <label for="github" class="form-label">
+        <div className="form-group">
+            <label htmlFor="github" className="form-label">
                 Github:
             </label>
-            <input type="text" id="github" name="github" class="form-input" />
+            <input type="text" id="github" name="github" className="form-input" />
         </div>
 
-        <div class="form-group">
-            <label for="demo" class="form-label">
+        <div className="form-group">
+            <label htmlFor="demo" className="form-label">
                 Demo:
             </label>
-            <input type="text" id="demo" name="demo" class="form-input" />
+            <input type="text" id="demo" name="demo" className="form-input" />
         </div>
 
-        <button type="submit" class="form-button">
+        <button type="submit" className="form-button">
           Add Item
         </button>
       </form>

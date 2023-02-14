@@ -24,7 +24,6 @@ const Header = () => {
   useEffect(() => {
     try {
       headerService.getHeader().then((result) => {
-        console.log(result);
         setValues({
           id: result[0]._id,
           name: result[0].name,
