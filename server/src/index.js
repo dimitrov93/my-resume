@@ -9,6 +9,7 @@ const cors = require('./middlewares/corseMiddleware');
 
 const headerRoute = require('./routes/header');
 const authRoute = require('./routes/auth');
+const portfolioRoute = require('./routes/portfolio');
 
 
 
@@ -24,6 +25,7 @@ app.use(auth)
 
 app.use("/api/auth", authRoute)
 app.use('/api/header', headerRoute)
+app.use('/api/portfolio', portfolioRoute)
 
 // app.use("/api/users", userRoute)
 // app.use("/api/tasks", taskRoute);
