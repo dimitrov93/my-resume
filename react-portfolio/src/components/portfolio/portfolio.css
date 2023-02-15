@@ -32,12 +32,8 @@
     margin-bottom: 1rem;
 }
 
-.editBtn {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    bottom: 2rem;
-
+.reactLink {
+    padding: 1rem;
 }
 
 

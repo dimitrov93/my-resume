@@ -9,10 +9,13 @@ import * as testimonialService from "../../services/testimonialService";
 // import Swiper core and required modules
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useAuthContext } from "../../context/AuthContext";
+
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { Link } from "react-router-dom";
 
 
 const data = [
@@ -47,8 +50,9 @@ const data = [
 
 
 const Testimonials = () => {
-
   const [testimonials, setTestimonials] = useState([])
+  const { user } = useAuthContext();
+
   
   useEffect(() => {
   
@@ -101,7 +105,11 @@ const Testimonials = () => {
             testimonials.map((x, index) => {
               return (
                 <SwiperSlide key={index} className="testimonials">
-                  <button className="delete__btn" onClick={(e) => onDelete(e, x._id)}><AiFillDelete /></button>
+                  {user.email ? 
+                    <button className="delete__btn" onClick={(e) => onDelete(e, x._id)}><AiFillDelete /></button>
+                  : 
+                    ""
+                  }
                 <div className="client__avatar">
                   <img src={x.avatar} />
                 </div>
@@ -116,7 +124,9 @@ const Testimonials = () => {
           </small>
           }
       </Swiper>
+      <Link to={'/testimonials/add'}>
       <button className="btn btn-primary btn-swiper">Write a testimonial</button>
+      </Link>
     </section>
   );
 };

@@ -11,6 +11,7 @@ import Footer from './components/footer/Footer'
 import Login from './components/Login/login'
 import Logout from './components/Logout/Logout'
 import AddPortfolio from './components/portfolio/Add/AddPortfolio'
+import TestimonialAdd from './components/testimonials/Add/TestimonialAdd'
 import { Routes, Route, HashRouter } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext'
 import EditPortfolio from "./components/portfolio/Edit/EditPortfolio";
@@ -40,6 +41,7 @@ const App = () => {
       <Route path="/logout" element={<Logout />} />
       <Route path="/portfolio/add" element={<AddPortfolio />} />
       <Route path="/portfolio/edit/:id" element={<EditPortfolio />} />
+      <Route path="/testimonials/add" element={<TestimonialAdd />} />
           
       </Routes>
     </AuthProvider>

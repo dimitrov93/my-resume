@@ -34,18 +34,17 @@ const PortfolioItem = ({ item }) => {
           Live Demo
         </a>
         {user.email ? (
-          <Link to={`portfolio/edit/${item._id}`}>
-            <a className="btn" target="_blank">
+              <Link to={`portfolio/edit/${item._id}`}>
+          <button className="btn">
               Edit
-            </a>
+            </button>
           </Link>
+            
         ) : (
           ""
         )}
         {user.email ? (
-          <button className="btn" onClick={() => handleDelete(item._id)}>
-            Delete
-          </button>
+          <button className="btn" onClick={() => handleDelete(item._id)}> Delete </button>
         ) : (
           ""
         )}
