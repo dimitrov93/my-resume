@@ -32,6 +32,27 @@
     margin: 0.8rem auto 0;
 }
 
+#testimonials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.no__reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete__btn {
+    padding: 0.5rem 1rem;
+    font-size: larger;
+    background: transparent;
+    color: red;
+    position: relative;
+}
+
 /* ========== MEDIA QUERIES (MEDIUM DEVICES)  ========== */
 
 @media screen and (max-width: 1024px) {

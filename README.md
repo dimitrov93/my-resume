@@ -25,3 +25,4 @@
     - import 'react-tooltip/dist/react-tooltip.css' -> index.js
     - import { Tooltip } from 'react-tooltip' -> component
  - EmailJS
+ - React Swiper
