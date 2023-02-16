@@ -4,7 +4,7 @@ module.exports = () => (req, res, next) => {
   
     if (allowed.includes(origin)) {                         //
       console.log('Origin: ' + req.get('origin'));
-      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); // http://localhost:4200 or origin
+      res.setHeader('Access-Control-Allow-Origin', origin); // http://localhost:4200 or origin
       res.setHeader("Allow-Control-Access-Policy", "true");
       res.setHeader("Access-Control-Allow-Credentials", "true");
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, HEAD');
