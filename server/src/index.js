@@ -29,10 +29,5 @@ app.use('/api/header', headerRoute)
 app.use('/api/portfolio', portfolioRoute)
 app.use('/api/testimonials', testimonialRoute)
 
-// app.use("/api/users", userRoute)
-// app.use("/api/tasks", taskRoute);
-// app.use("/api/messages", messageRoute);
-
-
 dbInit();
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
