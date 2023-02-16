@@ -5,7 +5,7 @@ const app = express();
 // const cors = require("cors");
 const cookieParser = require('cookie-parser');
 const {auth} = require('./middlewares/authMiddleware');
-const cors = require('./middlewares/corseMiddleware');
+const cors = require('cors');
 
 const headerRoute = require('./routes/header');
 const authRoute = require('./routes/auth');
@@ -19,7 +19,7 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use(cors())
+app.use(cors(({origin: ["https://dimitrov93.netlify.app", "http://localhost:3000"], credentials: true})))
 app.use(express.json())
 app.use(cookieParser());
 app.use(auth)
