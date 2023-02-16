@@ -74,7 +74,7 @@
 
     .about__me {
         width: 50%;
-        margin: 2rem auto 4rem;
+        margin: 3rem auto 8rem;
     }
 
     .about__content p {
@@ -85,9 +85,11 @@
 /* ========== MEDIA QUERIES (SMALL DEVICES)  ========== */
 
 @media screen and (max-width: 600px) {
+
     .about__me {
         width: 65%;
-        margin: 0 auto 3rem;
+        margin: 3rem auto 6rem;
+
     }
 
     .about__cards {
@@ -102,4 +104,5 @@
     .about__content p {
         margin: 1.5rem 0;
     }
+
 }

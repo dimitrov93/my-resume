@@ -32,6 +32,16 @@
     margin-bottom: 1rem;
 }
 
+<<<<<<< Updated upstream:react-portfolio/src/components/portfolio/portfolio.css
+=======
+.editBtn {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 2rem;
+
+}
+>>>>>>> Stashed changes:src/components/portfolio/portfolio.css
 
 /* ========== MEDIA QUERIES (MEDIUM DEVICES)  ========== */
 

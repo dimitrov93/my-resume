@@ -10,7 +10,13 @@ import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
 import Login from './components/Login/login'
 import Logout from './components/Logout/Logout'
+<<<<<<< Updated upstream:react-portfolio/src/App.jsx
 import { Routes, Route, HashRouter } from "react-router-dom";
+=======
+import AddPortfolio from './components/portfolio/Add/AddPortfolio'
+import TestimonialAdd from './components/testimonials/Add/TestimonialAdd'
+import { Routes, Route } from "react-router-dom";
+>>>>>>> Stashed changes:src/App.jsx
 import { AuthProvider } from './context/AuthContext'
 
 

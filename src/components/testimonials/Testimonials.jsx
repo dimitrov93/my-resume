@@ -46,6 +46,47 @@ const data = [
 ];
 
 const Testimonials = () => {
+<<<<<<< Updated upstream:react-portfolio/src/components/testimonials/Testimonials.jsx
+=======
+  const [testimonials, setTestimonials] = useState([])
+  const { user } = useAuthContext();
+
+  
+  useEffect(() => {
+  
+    try {
+      testimonialService.getAll()
+        .then(result => {
+          setTestimonials(result)
+        })
+    } catch (error) {
+      console.log(error);
+    }
+  
+  }, [])
+
+  const onDelete = (e,id) => {
+    e.preventDefault();
+
+    let confirmation = window.confirm(
+      "Are you sure that you want to delete this item?"
+    )
+
+    if (confirmation) {
+      try {
+        testimonialService.remove(id)
+          .then(result => {
+            window.location.reload(false)
+          })
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+
+  }
+
+>>>>>>> Stashed changes:src/components/testimonials/Testimonials.jsx
   return (
     <section id="testimonials">
       <h5>Review from clients</h5>
@@ -59,7 +100,13 @@ const Testimonials = () => {
            pagination={{ clickable: true }}
       >
           {
+<<<<<<< Updated upstream:react-portfolio/src/components/testimonials/Testimonials.jsx
             data.map(({avatar,name, review}, index) => {
+=======
+            
+            testimonials.length > 0 ?
+            testimonials.map((x, index) => {
+>>>>>>> Stashed changes:src/components/testimonials/Testimonials.jsx
               return (
                 <SwiperSlide key={index} className="testimonials">
                 <div className="client__avatar">
