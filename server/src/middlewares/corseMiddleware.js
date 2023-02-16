@@ -1,7 +1,8 @@
 module.exports = () => (req, res, next) => {
-    const allowed = ['https://dimitrov93.netlify.app/','http://localhost:3000', "https://myresume-node-deployment.onrender.com"];
+    const allowed = ['https://dimitrov93.netlify.app','http://localhost:3000']; // front end
     const origin = req.get("origin");
   
+    console.log(res);
     if (allowed.includes(origin)) {                         //
       console.log('Origin: ' + req.get('origin'));
       res.setHeader('Access-Control-Allow-Origin', origin); // http://localhost:4200 or origin
