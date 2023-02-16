@@ -59,7 +59,7 @@ const Experience = () => {
           <h3>Backend Development</h3>
           <div className="experience__content">
             <article className="experience__details">
-                <BsPatchCheck className="experience__details-icon" />
+            <BsPatchCheck className="experience__details-icon" />
                 <div>
                 <h4>Java</h4>
                 <small className="text-light">Beginner</small>
@@ -115,7 +115,7 @@ const Experience = () => {
                 <small className="text-light">Beginner</small>
                 </div>
             </article>
-            
+
           </div>
         </div>
 

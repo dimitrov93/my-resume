@@ -148,8 +148,6 @@ img {
     width: 20%;
     border-radius: 2rem;
     border: 1px solid var(--color-white);
-<<<<<<< Updated upstream:react-portfolio/src/index.css
-=======
 }
 
 .changeName {
@@ -173,6 +171,9 @@ img {
     font-size: 1.7rem;
 }
 
+
+/* ========== MEDIA QUERIES (MEDIUM DEVICES)  ========== */
+
 @media screen and (max-width: 1024px) {
     .reactToolTip {
         width: 40%;
@@ -185,5 +186,4 @@ img {
     .reactToolTip {
         width: 40%;
     }
->>>>>>> Stashed changes:src/index.css
 }

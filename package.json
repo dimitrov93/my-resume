@@ -1,8 +1,4 @@
 {
-<<<<<<< Updated upstream:react-portfolio/package.json
-  "homepage": "https://dimitrov93.github.io/my-resume/",
-=======
->>>>>>> Stashed changes:package.json
   "name": "react-portfolio",
   "version": "0.1.0",
   "private": true,

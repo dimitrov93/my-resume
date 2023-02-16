@@ -149,7 +149,7 @@ const Services = () => {
                 data-tooltip-content="Ability to test and debug code to ensure it works as expected and performs optimally.
                 "
               >
-                Testing and debugging:
+              Testing and debugging
               </p>
               <ReactTooltip
                 anchorId="Testing and debugging:"

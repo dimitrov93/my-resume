@@ -1,53 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import {AiFillDelete} from 'react-icons/ai'
 import "./testimonials.css";
-import AVT1 from "../../assets/avatar1.jpg";
-import AVT2 from "../../assets/avatar2.jpg";
-import AVT3 from "../../assets/avatar3.jpg";
-import AVT4 from "../../assets/avatar4.jpg";
-
+import * as testimonialService from "../../services/testimonialService";
 // import Swiper core and required modules
 import { Pagination } from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useAuthContext } from "../../context/AuthContext";
+
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-
-const data = [
-  {
-    avatar: AVT1,
-    name: "Ts Dimitrov",
-    review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil adipisci amet culpa maxime nesciunt necessitatibus!",
-  },
-
-  {
-    avatar: AVT2,
-    name: "Ts Dimitrov",
-    review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil adipisci amet culpa maxime nesciunt necessitatibus!",
-  },
-
-  {
-    avatar: AVT3,
-    name: "Ts Dimitrov",
-    review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil adipisci amet culpa maxime nesciunt necessitatibus!",
-  },
-
-  {
-    avatar: AVT4,
-    name: "Ts Dimitrov",
-    review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil adipisci amet culpa maxime nesciunt necessitatibus!",
-  },
-];
+import { Link } from "react-router-dom";
 
 const Testimonials = () => {
-<<<<<<< Updated upstream:react-portfolio/src/components/testimonials/Testimonials.jsx
-=======
   const [testimonials, setTestimonials] = useState([])
   const { user } = useAuthContext();
 
@@ -86,7 +52,6 @@ const Testimonials = () => {
 
   }
 
->>>>>>> Stashed changes:src/components/testimonials/Testimonials.jsx
   return (
     <section id="testimonials">
       <h5>Review from clients</h5>
@@ -100,28 +65,32 @@ const Testimonials = () => {
            pagination={{ clickable: true }}
       >
           {
-<<<<<<< Updated upstream:react-portfolio/src/components/testimonials/Testimonials.jsx
-            data.map(({avatar,name, review}, index) => {
-=======
-            
             testimonials.length > 0 ?
             testimonials.map((x, index) => {
->>>>>>> Stashed changes:src/components/testimonials/Testimonials.jsx
               return (
                 <SwiperSlide key={index} className="testimonials">
+                  {user.email ? 
+                    <button className="delete__btn" onClick={(e) => onDelete(e, x._id)}><AiFillDelete /></button>
+                  : 
+                    ""
+                  }
                 <div className="client__avatar">
-                  <img src={avatar} />
+                  <img src={x.avatar} />
                 </div>
-                <h5 className="client__name">{name}</h5>
+                <h5 className="client__name">{x.name}</h5>
                 <small className="client__review">
-                  {review}
+                  {x.review}
                 </small>
               </SwiperSlide>
               )
-            })
+            }) :          <small className="testimonials no__reviews">
+                There are no reviews left yet
+          </small>
           }
       </Swiper>
-
+      <Link to={'/testimonials/add'}>
+      <button className="btn btn-primary btn-swiper">Write a testimonial</button>
+      </Link>
     </section>
   );
 };
