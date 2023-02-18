@@ -5,19 +5,12 @@
 - cd react-porfolio
 - npm start
 
-## Hosted with Github Pages
-- npm install gh-pages --save-dev
-- package.json  
-  - "homepage": "https://dimitrov93.github.io/my-resume",
-  - "scripts": {
-   "predeploy": "npm run build",
-   "deploy": "gh-pages -d build",
-}
+## Front-end Hosted with Netlify
+- https://dimitrov93.netlify.app
 
-- git remote add origin https://github.com/dimitrov93/my-resume.git
-- npm run deploy
+## Back-end Hosted with Render
 
-## Tools used
+## Dependencies used
  - React-icons 
     - npm install react-icons --save
  - React ToolTop
@@ -25,3 +18,8 @@
     - import 'react-tooltip/dist/react-tooltip.css' -> index.js
     - import { Tooltip } from 'react-tooltip' -> component
  - EmailJS
+    - npm install emailjs-com --save
+ - Swiper
+    - npm install swiper
+ - React router dom
+    - npm install react-router-dom
