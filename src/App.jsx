@@ -39,9 +39,9 @@ const App = () => {
           }
         />
         <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
 
         <Route element={<LogginGuard />}>
-          <Route path="/logout" element={<Logout />} />
           <Route path="/portfolio/add" element={<AddPortfolio />} />
           <Route path="/portfolio/edit/:id" element={<EditPortfolio />} />
           <Route path="/testimonials/add" element={<TestimonialAdd />} />
