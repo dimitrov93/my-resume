@@ -35,11 +35,21 @@ const Portfolio = () => {
         )}
       </div>
 
-      <div className="container portfolio__container">
-        {portFolio.map((x) => (
-          <PortfolioItem key={x._id} item={x} />
-        ))}
-      </div>
+      {portFolio.length >  0 ? (
+        <div className="container portfolio__container">
+          {portFolio.map((x) => (
+            <PortfolioItem key={x._id} item={x} />
+          ))}
+        </div>
+      ) : (
+        <>
+        
+          <h2 className="loading_header">Loading....Please await!
+          <br/>
+          <div id="loading"></div>
+          </h2>
+        </>
+      )}
     </section>
   );
 };

@@ -60,9 +60,20 @@ const Header = () => {
   return (
     <header>
       <div className="container header__container">
-        <h5>{values.title}</h5>
-        <h1>{values.name}</h1>
-        <h5 className="text-light">{values.description}</h5>
+        {Object.keys(values).length > 0 ? (
+          <>
+            <h5>{values.title}</h5>
+            <h1>{values.name}</h1>
+            <h5 className="text-light">{values.description}</h5>
+          </>
+        ) : (
+          <>
+            <h2 className="loading_header">Loading....Please await!
+            <br/>
+            <div id="loading"></div>
+            </h2>
+          </>
+        )}
 
         {user.email ? (
           <>

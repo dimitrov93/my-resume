@@ -39,12 +39,12 @@ const App = () => {
           }
         />
         <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/testimonials/add" element={<TestimonialAdd />} />
 
         <Route element={<LogginGuard />}>
           <Route path="/portfolio/add" element={<AddPortfolio />} />
           <Route path="/portfolio/edit/:id" element={<EditPortfolio />} />
-          <Route path="/testimonials/add" element={<TestimonialAdd />} />
         </Route>
       </Routes>
     </AuthProvider>
