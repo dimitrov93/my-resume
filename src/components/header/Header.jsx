@@ -57,10 +57,12 @@ const Header = () => {
     });
   };
 
+
   return (
     <header>
       <div className="container header__container">
-        {Object.keys(values).length > 0 ? (
+  
+        {values.name ? (
           <>
             <h5>{values.title}</h5>
             <h1>{values.name}</h1>
