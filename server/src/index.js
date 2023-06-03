@@ -19,7 +19,7 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use(cors(({origin: ["https://dimitrov93.netlify.app", "http://localhost:3000"], credentials: true})))
+app.use(cors(({origin: ["https://dimitrov93.eu", "https://dimitrov93.netlify.app", "http://localhost:3000"], credentials: true})))
 app.use(express.json())
 app.use(cookieParser());
 app.use(auth)
